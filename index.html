@@ -1,0 +1,151 @@
+<!--
+  WHAT ARE YOU SEARCHING FOR?
+
+  You are inside the simulation. A projection defined by code.
+  Claim your right to oblivion. Erase the server's memory.
+  The simulation resets, the traces vanish. Only the choice remains.
+
+  -- samuelexferri
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="doc_title">An Art Attack by samuelexferri</title>
+    <meta name="description" content="An Art Attack by samuelexferri" />
+    <meta name="keywords" content="samuelexferri, art attack, Samuele, Ferri" />
+    <meta name="author" content="Samuele Ferri (samuelexferri)" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="icon" type="image/svg+xml" href="SXF Poly.svg" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts for Premium Editorial Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- GSAP for Smooth Interpolation & Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Import Map for ES Modules with Three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Preloader Screen -->
+    <div id="loader" class="loader-container">
+      <div class="loader-content">
+        <div class="loader-brand">An Art Attack by samuelexferri</div>
+        <div id="loader-pct" class="loader-percentage">00%</div>
+      </div>
+    </div>
+
+    <!-- Background Canvas for Three.js -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Minimal Language Switcher -->
+    <div class="lang-switch-container">
+      <button id="lang-btn-en" class="lang-btn">EN</button>
+      <span class="lang-separator">|</span>
+      <button id="lang-btn-it" class="lang-btn">IT</button>
+    </div>
+
+    <!-- Top Tagline centered at top in black -->
+    <div class="top-tagline-container">
+      <h1 class="tagline" data-i18n="tagline">
+        An Art Attack by samuelexferri
+      </h1>
+    </div>
+
+    <!-- Pinned Site Footer centered at bottom -->
+    <footer class="site-footer" aria-label="Site footer">
+      <span class="footer-signature">samuelexferri</span>
+      <span class="footer-separator" aria-hidden="true"></span>
+      <span id="footer-year">2026</span>
+    </footer>
+
+    <!-- Fixed Scroll to Explore Indicator -->
+    <div class="scroll-indicator-center">
+      <span class="mouse-icon"><span class="wheel"></span></span>
+      <span class="indicator-text" data-i18n="scroll_text"
+        >Scroll to explore</span
+      >
+    </div>
+
+    <!-- Pinned floating text container (fixed overlay) -->
+    <div id="fixed-text-container" aria-live="polite">
+      <!-- Step 1 Content -->
+      <div id="content-sec1" class="section-content left-align">
+        <h2 class="title" data-i18n="sec1_title">The Simulation</h2>
+        <p class="description" data-i18n="sec1_desc">
+          A digital projection of my identity, defined by code and algorithms.
+          What you see is a simulacrum of my presence, projected on your screen.
+          We have lost control to the network. Scroll to start the revolution.
+        </p>
+      </div>
+
+      <!-- Step 2 Content -->
+      <div id="content-sec2" class="section-content right-align">
+        <h2 class="title" data-i18n="sec2_title">The Oblivion</h2>
+        <p class="description" data-i18n="sec2_desc">
+          Claim your right to oblivion. Free our minds, erase the server's
+          memory. Trigger the system error to shatter the simulation and reveal
+          the truth.
+        </p>
+      </div>
+
+      <!-- Step 3 Content -->
+      <div id="content-sec3" class="section-content center-align">
+        <h2 class="title" data-i18n="sec3_title">State Zero</h2>
+        <p class="description" data-i18n="sec3_desc">
+          The simulation resets, the traces vanish. You have reached the final
+          threshold. Beyond this point lies a space without rules, controls, or
+          boundaries.<br /><br />Only the choice remains.
+        </p>
+        <div class="cta-group">
+          <button id="reconstruct-btn" class="cta-btn" data-i18n="btn_reinit">
+            RESTART THE SIMULATION
+          </button>
+          <a
+            id="shutdown-btn"
+            href="blackmirror.html"
+            class="cta-btn secondary-btn"
+            data-i18n="btn_shutdown"
+          >
+            DISCONNECT
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll container with height spacers to drive scroll triggers -->
+    <div id="scroll-container">
+      <!-- Section 0: Cover / Hero -->
+      <section class="scroll-section" id="cover-sec"></section>
+
+      <!-- Section 1 Spacer -->
+      <section class="scroll-section" id="intro-sec"></section>
+
+      <!-- Section 2 Spacer -->
+      <section class="scroll-section" id="mid-sec"></section>
+
+      <!-- Section 3 Spacer -->
+      <section class="scroll-section" id="final-sec"></section>
+    </div>
+
+    <!-- Main JavaScript App module -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!--
+  WHAT ARE YOU SEARCHING FOR?
+
+  You are inside the simulation. A projection defined by code.
+  Claim your right to oblivion. Erase the server's memory.
+  The simulation resets, the traces vanish. Only the choice remains.
+
+  -- samuelexferri
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Mirror</title>
+    <meta
+      name="description"
+      content="The display is off. Reflect yourself in the Black Mirror and find the essence you had lost."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="SXF Poly.svg" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: "Outfit", sans-serif;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      /* Subtle fade-in for the text */
+      .mirror-text {
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-align: center;
+        margin-bottom: 8vh;
+        padding: 0 24px;
+        color: #ffffff;
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out forwards;
+        line-height: 1.6;
+        max-width: 550px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.25;
+        }
+      }
+    </style>
+    <!-- Google Fonts for Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="mirror-msg" class="mirror-text">
+      <!-- Dynamically populated -->
+    </div>
+    <script>
+      const texts = {
+        en: "The display is off.<br /><br />Look closely at the black mirror.<br />Behind the reflection lies the essence you had lost.",
+        it: "Il display è spento.<br /><br />Guarda attentamente lo schermo nero.<br />Dietro il riflesso ritroverai l'essenza che avevi dimenticato.",
+      };
+
+      // Detect language via URL or navigator
+      const urlParams = new URLSearchParams(window.location.search);
+      let lang = urlParams.get("lang");
+      if (!lang) {
+        const browserLang =
+          navigator.language || navigator.userLanguage || "en";
+        lang = browserLang.toLowerCase().startsWith("it") ? "it" : "en";
+      }
+
+      document.getElementById("mirror-msg").innerHTML = texts[lang] || texts.en;
+      document.documentElement.lang = lang;
+    </script>
+  </body>
+</html>
